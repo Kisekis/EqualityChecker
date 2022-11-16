@@ -19,9 +19,9 @@ private:
     std::vector<source_code_pair> data;
     std::vector<processer> processers;
 private:
-    void read_file();
-    void process();
-    void write_csv();
+    void read_file();//读取程序对
+    void process();//运行
+    void write_csv();//写如csv
 public:
     void start();
     void set_input_path(const std::string &input_path){
