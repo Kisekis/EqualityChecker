@@ -90,10 +90,13 @@ void processer::clear(const std::string &path1, const std::string &path2)
     std::string rm2 = "rm " + path2 + ".out";
     std::string rm3 = "rm " + path1 + ".output";
     std::string rm4 = "rm " + path2 + ".output";
+    std::string rm_input = "rm data.input";
+    
     system(rm1.c_str());
     system(rm2.c_str());
     system(rm3.c_str());
     system(rm4.c_str());
+    system(rm_input.c_str());
 }
 
 void processer::create_input_file() {
