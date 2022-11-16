@@ -16,7 +16,7 @@ public:
     void clear(const std::string &path1, const std::string &path2);//清除中间文件
 
     static void generate_random_input(std::vector<single_input_format> &input);//用于生成特定格式的输入
-    static std::string processer::random_string(int a, int b);
+    static std::string random_string(int a, int b);
     static char random_char();
     static int random_int(int a, int b);
 
