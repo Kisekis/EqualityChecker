@@ -3,20 +3,20 @@
 #include <fstream>
 #include <iostream>
 
-static int random_int(int a, int b)
+int processer::random_int(int a, int b)
 {
     std::random_device dev;
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist(a, b);
     return dist(rng);
 }
-static char random_char()
+char processer::random_char()
 {
     int offset = random_int(0, 25);
     int type = random_int(0, 1);
     return type == 0 ? char('a' + offset) : char('A' + offset);
 }
-static std::string random_string(int a, int b)
+std::string processer::random_string(int a, int b)
 {
     int size = random_int(a, b);
     std::string s;
@@ -27,7 +27,7 @@ static std::string random_string(int a, int b)
     return s;
 }
 
-static void generate_random_input(std::vector<single_input_format> &input)
+void processer::generate_random_input(std::vector<single_input_format> &input)
 {
     for (auto &x : input)
     {
@@ -45,7 +45,7 @@ static void generate_random_input(std::vector<single_input_format> &input)
         }
     }
 }
-static bool is_same_file(const std::string &path1, const std::string &path2)
+bool processer::is_same_file(const std::string &path1, const std::string &path2)
 {
     std::string cmd = "diff " + path1 + " " + path2;
     int result = system(cmd.c_str());
